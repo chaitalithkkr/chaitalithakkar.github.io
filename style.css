@@ -1,111 +1,107 @@
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto&display=swap');
-
-body {
-  font-family: 'Roboto', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fafafa;
-  color: #333;
-  line-height: 1.6;
-  scroll-behavior: smooth;
+/* ====== Variables & Base ====== */
+:root{
+  --bg:#faf8fb;
+  --card:#ffffff;
+  --text:#222227;
+  --muted:#6b6b72;
+  --lavender:#a88add;    /* primary pop */
+  --coral:#ff8a65;       /* secondary accent */
+  --glass: rgba(255,255,255,0.7);
+  --container: 1100px;
 }
 
-/* Navbar */
-header {
-  position: sticky;
-  top: 0;
-  background-color: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 100;
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: "Roboto", system-ui, -apple-system, "Segoe UI", "Helvetica", "Arial", sans-serif;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
 }
 
-nav {
-  display: flex;
-  justify-content: center;
-  padding: 15px 0;
-}
+/* ====== Layout ====== */
+.container{width:90%; max-width:var(--container); margin:0 auto}
+.header-inner{display:flex; align-items:center; justify-content:space-between; gap:16px}
+.site-header{position:sticky; top:0; z-index:50; backdrop-filter: blur(4px); background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); box-shadow:0 6px 20px rgba(20,20,30,0.04)}
 
-nav a {
-  margin: 0 20px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  transition: color 0.3s;
-}
+/* Brand */
+.brand{display:flex; flex-direction:column}
+.brand-link{text-decoration:none; color:var(--text)}
+.brand-name{font-weight:700; font-family:"Poppins", sans-serif; letter-spacing:0.2px}
+.brand-sub{font-size:0.82rem; color:var(--muted)}
 
-nav a:hover {
-  color: #5b21b6;
-}
+/* Nav */
+.nav{display:flex; gap:18px; align-items:center}
+.nav a{color:var(--text); text-decoration:none; font-weight:600; padding:10px 6px; border-radius:8px; transition:color .22s, background .22s}
+.nav a:hover{color:var(--lavender); background:rgba(168,138,221,0.06)}
 
-/* Sections */
-section {
-  max-width: 900px;
-  margin: 80px auto;
-  padding: 0 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease-out;
-}
+/* Hero */
+.hero{display:flex; gap:40px; align-items:center; padding:56px 0}
+.hero-left{flex:1}
+.hero-right{width:320px}
+.hero-title{font-family:"Poppins", sans-serif; margin:0 0 8px; font-size:2.1rem; color:var(--lavender)}
+.hero-sub{color:var(--muted); margin:0 0 18px; max-width:54ch}
+.cta-row{display:flex; gap:12px; margin-bottom:18px}
+.button{display:inline-block; text-decoration:none; padding:10px 16px; border-radius:12px; font-weight:700; font-size:0.95rem; box-shadow:0 6px 18px rgba(16,16,24,0.06)}
+.button.primary{background:linear-gradient(90deg,var(--lavender), #8a6be0); color:#fff}
+.button.ghost{background:transparent; border:1px solid rgba(100,100,120,0.08); color:var(--text)}
+.quick-links{list-style:none; padding:0; margin:8px 0 0; color:var(--muted)}
+.quick-links li{margin:6px 0}
 
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Hero card */
+.hero-card{background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.95)); border-radius:14px; padding:18px; box-shadow:0 8px 30px rgba(20,20,30,0.06); text-align:center}
+.hero-photo{width:100%; height:240px; object-fit:cover; border-radius:10px; background:linear-gradient(135deg,var(--lavender),var(--coral))}
+.hero-meta{margin-top:12px}
+.meta-name{font-weight:700}
+.meta-role{color:var(--muted); font-size:0.95rem}
 
-/* Headings */
-h1, h2 {
-  font-family: 'Poppins', sans-serif;
-  color: #5b21b6;
-  margin-bottom: 20px;
-}
+/* Featured & cards */
+.section-title{font-family:"Poppins", sans-serif; color:var(--lavender); margin-bottom:18px; font-size:1.25rem}
+.card-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+.card{background:var(--card); padding:18px; border-radius:12px; box-shadow:0 10px 28px rgba(16,16,24,0.04); transition:transform .28s ease, box-shadow .28s ease}
+.card:hover{transform:translateY(-6px); box-shadow:0 18px 40px rgba(16,16,24,0.08)}
+.card h3{margin:0 0 8px}
+.card p{color:var(--muted); margin:0 0 12px}
+.card-link{color:var(--lavender); text-decoration:none; font-weight:700}
 
-/* Buttons */
-a.button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #5b21b6;
-  color: #fff;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s, transform 0.3s;
-}
+/* Experience & projects */
+.experience-item ul, .project ul{margin:12px 0 0 18px}
+.two-col{display:grid; grid-template-columns: 1fr 320px; gap:28px; align-items:start}
+.skill-list{list-style:none; padding:0}
+.skill-list li{margin:8px 0}
 
-a.button:hover {
-  background-color: #f97316;
-  transform: translateY(-2px);
-}
+/* Projects grid */
+.project-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:18px}
 
-/* Project / Experience Cards */
-.project, .experience-item {
-  margin-bottom: 40px;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project:hover, .experience-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-}
+/* Contact */
+.contact-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:18px}
+.card h3{margin-bottom:8px}
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 30px 0;
-  color: #666;
-  font-size: 0.9rem;
-}
+.site-footer{padding:28px 0; margin-top:36px; background:transparent; color:var(--muted); text-align:center}
+.footer-small{font-size:0.85rem; margin-top:6px}
+
+/* Muted */
+.muted{color:var(--muted)}
+
+/* Animations - initial hidden then visible by JS */
+section, .card, .project, .experience-item{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease}
+.visible{opacity:1; transform:translateY(0)}
 
 /* Responsive */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-  nav a {
-    margin: 10px 0;
-  }
+@media (max-width: 980px){
+  .card-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{flex-direction:column}
+  .two-col{grid-template-columns:1fr}
+  .hero-right{width:100%}
+  .project-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .card-grid{grid-template-columns:1fr}
+  .brand-sub{display:none}
+  .hero-title{font-size:1.5rem}
 }
