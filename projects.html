@@ -1,52 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Projects | Chaitali Thakkar</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — Chaitali Thakkar</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-link"><span class="brand-name">Chaitali Thakkar</span></a>
+        <span class="brand-sub">Data • Product • Story</span>
+      </div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="experience.html">Experience</a>
-    <a href="projects.html">Projects</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+  <main>
+    <section class="container">
+      <h1 class="section-title">Projects</h1>
 
-<section>
-  <h1>Projects</h1>
+      <div class="project-grid">
 
-  <div class="project">
-    <h3>Wiki Q/A Chatbot</h3>
-    <p>Hybrid chatbot combining BlenderBot generative responses with zero-shot intent classification; indexed 5,000+ Wikipedia articles; improved response relevance by 28%.</p>
-  </div>
+        <article id="fashion" class="project card">
+          <h3>Fashion Recommender System + Pricing Strategy</h3>
+          <p><em>H&amp;M dataset — Aug 2025 — Oct 2025</em></p>
+          <ul>
+            <li>Built personalized recommender models on 50K+ transactions, improving product relevance by 22%.</li>
+            <li>Applied Charm &amp; Mafia algorithms to analyze price elasticity and optimize markdowns by ~12%.</li>
+            <li>Simulated marketing mix modeling to measure channel impact and guide ad spend.</li>
+            <li>Designed Power BI dashboards to visualize customer behavior & pricing trends.</li>
+          </ul>
+        </article>
 
-  <div class="project">
-    <h3>Fashion Recommender System</h3>
-    <p>Integrated image and tabular data to recommend outfits and optimize pricing strategy using PySpark and machine learning algorithms.</p>
-  </div>
+        <article id="inpatient" class="project card">
+          <h3>Explanatory Modeling of Inpatient Cost Trends</h3>
+          <p><em>Healthcare Analytics Course Project — Mar 2025</em></p>
+          <ul>
+            <li>Modelled inpatient cost drivers using GLM, SVM, and Random Forest (R² ≈ 0.64).</li>
+            <li>Performed subgroup analysis by diagnosis, age, and readmission to identify high-cost cohorts.</li>
+            <li>Recommended strategies estimated to save 10–15%.</li>
+            <li>Visualized insights via Power BI dashboards for stakeholders.</li>
+          </ul>
+        </article>
 
-  <div class="project">
-    <h3>Inpatient Cost Trend Modeling</h3>
-    <p>Built GLM and Random Forest models predicting inpatient cost trends; visualized insights through Power BI dashboards to inform healthcare decision-making.</p>
-  </div>
+        <article id="wiki-qa" class="project card">
+          <h3>Wiki Q/A Chatbot</h3>
+          <p><em>Information Retrieval — Nov 2024</em></p>
+          <ul>
+            <li>Indexed 5,000+ Wikipedia articles with Solr for a domain-agnostic retrieval system, cutting query time by 35%.</li>
+            <li>Built a hybrid chatbot using BlenderBot and zero-shot intent classification, improving relevance by 28%.</li>
+            <li>Evaluated retrieval using MRR (0.71) and MAP (0.68).</li>
+            <li>Created an interactive Q&amp;A UI, boosting engagement and query success by 40%.</li>
+          </ul>
+        </article>
 
-  <div class="project">
-    <h3>Alcura | AI-driven Drug Discovery</h3>
-    <p>Developed a healthcare analytics platform to accelerate drug discovery using predictive modeling, NLP, and image analysis.</p>
-  </div>
+        <article class="project card">
+          <h3>Gen AI Hackathon — Mental Health Awareness</h3>
+          <p><em>Accessibility project for immigrants</em></p>
+          <ul>
+            <li>Used Meta Seamless, Whisper ASR, and DeepSpeech for accessibility and multi-language support.</li>
+            <li>Built React + Flask application with wireframes in Figma and backend APIs in Python.</li>
+          </ul>
+        </article>
 
-</section>
+        <article class="project card">
+          <h3>AI-Driven Healthcare Analytics — Alcura</h3>
+          <p><em>Startup Bootcamp — University at Buffalo</em></p>
+          <ul>
+            <li>Led Alcura as PM, coordinating ML, predictive modeling, and image analytics for accelerated drug discovery.</li>
+            <li>Aligned analytics to business goals and ensured cross-functional collaboration.</li>
+          </ul>
+        </article>
 
-<footer>
-&copy; 2025 Chaitali Thakkar. All rights reserved.
-</footer>
+        <article class="project card">
+          <h3>Seattle Weather Prediction</h3>
+          <p><em>Classification & feature engineering</em></p>
+          <ul>
+            <li>Used 1,400+ historical records, engineered temporal features, and tracked experiments with MLflow.</li>
+            <li>Achieved ~93.6% accuracy with Logistic Regression after feature engineering.</li>
+          </ul>
+        </article>
 
-<script src="scripts.js"></script>
+        <article class="project card">
+          <h3>Optimizing Logistics Through Data</h3>
+          <p><em>Database & tracking system</em></p>
+          <ul>
+            <li>Designed a BCNF-compliant database and real-time shipment tracking.</li>
+            <li>Optimized SQL queries, generated synthetic data, and built a Flask visualization app.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Chaitali Rajulkumar Thakkar</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
